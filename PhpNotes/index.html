@@ -4,13 +4,37 @@
 <title>Font list</title>
 </head>
 <body>
-<p
+<div style="white-space: pre;">
   <a href="https://www.youtube.com/watch?v=N8pHSP3ob7o&list=PL0eyrZgxdwhwwQQZA79OzYwl5ewA7HQih&index=27">Password Hash</a><br>
   <a href="https://www.youtube.com/watch?v=FbLYsTHJKDw&list=PL0eyrZgxdwhwwQQZA79OzYwl5ewA7HQih&index=26">Session Security</a><br>
   <a href="https://www.youtube.com/watch?v=ZcwfGXIoA6A">List of All Basic PHP Security You Need to Know</a><br>
   <a href="https://www.youtube.com/watch?v=Anz0ArcQ5kI&list=PL0eyrZgxdwhypQiZnYXM7z7-OTkcMgGPh">Object Oriented PHP Tutorial For Beginners</a><br>
   <a href="https://www.youtube.com/playlist?list=PL0eyrZgxdwhypQiZnYXM7z7-OTkcMgGPh">Object Oriented PHP Tutorials</a><br>
   <a href="https://www.youtube.com/watch?v=ZAPzeoHhid0">Visual Studio Code as a Free PHP IDE Like PHPStorm</a><br>
-</p>
+
+  <b>HOW TO SET UP PACKAGE.JSON & VITE.CONFIG.JS</b>
+
+  Use the terminal, and type this to create the package.json:
+
+  npm init -y
+
+  Then use this command to install the vite plugin:
+
+  npm install laravel-vite-plugin --save-dev
+
+  If you still do not have the vite.config.js file, just create it manually, and then paste this inside the file:
+
+  import { defineConfig } from 'vite';
+  import laravel from 'laravel-vite-plugin';
+
+  export default defineConfig({
+      plugins: [
+          laravel([
+              'resources/css/app.css',
+              'resources/js/app.js',
+          ]),
+      ],
+  });
+  </div>
 </body>
 </html>
