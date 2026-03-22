@@ -12,29 +12,47 @@
   <a href="https://www.youtube.com/playlist?list=PL0eyrZgxdwhypQiZnYXM7z7-OTkcMgGPh">Object Oriented PHP Tutorials</a><br>
   <a href="https://www.youtube.com/watch?v=ZAPzeoHhid0">Visual Studio Code as a Free PHP IDE Like PHPStorm</a><br>
 
-  <b>HOW TO SET UP PACKAGE.JSON & VITE.CONFIG.JS</b>
+  -----------------------------------------------------------
 
-  Use the terminal, and type this to create the package.json:
+        <b>HOW TO SET UP PACKAGE.JSON & VITE.CONFIG.JS</b>
 
-  npm init -y
+        Use the terminal, and type this to create the package.json:
 
-  Then use this command to install the vite plugin:
+        npm init -y
 
-  npm install laravel-vite-plugin --save-dev
+        Then use this command to install the vite plugin:
 
-  If you still do not have the vite.config.js file, just create it manually, and then paste this inside the file:
+        npm install laravel-vite-plugin --save-dev
 
-  import { defineConfig } from 'vite';
-  import laravel from 'laravel-vite-plugin';
+        If you still do not have the vite.config.js file, just create it manually, and then paste this inside the file:
 
-  export default defineConfig({
-      plugins: [
-          laravel([
-              'resources/css/app.css',
-              'resources/js/app.js',
-          ]),
-      ],
-  });
+        import { defineConfig } from 'vite';
+        import laravel from 'laravel-vite-plugin';
+
+        export default defineConfig({
+            plugins: [
+                laravel([
+                    'resources/css/app.css',
+                    'resources/js/app.js',
+                ]),
+            ],
+        });
+
+    -----------------------------------------------------------
+
+    <b>Fixing npm's standard Windows security restriction</b>
+    
+    Open the Start Menu, search for PowerShell, right-click it, and select Run as Administrator.
+    Run the following command to allow scripts for your user account:
+    powershell
+
+    C:\Users\rohid> Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+    When prompted, type Y (or A for Yes to All) and press Enter.
+
+    Restart your terminal (or VS Code) and try npm -v again
+    
+    -----------------------------------------------------------
   </div>
 </body>
 </html>
