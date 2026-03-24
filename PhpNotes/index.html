@@ -2,93 +2,119 @@
 <html>
 <head>
 <title>Font list</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+color: darkslategrey;
+}
+.seperator1 {
+background-color: lightblue;
+border-radius: 10px;
+padding: 20px;;
+padding-left: 50px;
+margin:0;
+}
+.seperator2 {
+background-color: rgb(230, 230, 173);
+border-radius: 10px;
+padding: 20px;;
+padding-left: 50px;
+margin:0;
+}
+</style>
 </head>
 <body>
 <div style="white-space: pre;">
-  <a href="https://www.youtube.com/watch?v=N8pHSP3ob7o&list=PL0eyrZgxdwhwwQQZA79OzYwl5ewA7HQih&index=27">Password Hash</a><br>
-  <a href="https://www.youtube.com/watch?v=FbLYsTHJKDw&list=PL0eyrZgxdwhwwQQZA79OzYwl5ewA7HQih&index=26">Session Security</a><br>
-  <a href="https://www.youtube.com/watch?v=ZcwfGXIoA6A">List of All Basic PHP Security You Need to Know</a><br>
-  <a href="https://www.youtube.com/watch?v=Anz0ArcQ5kI&list=PL0eyrZgxdwhypQiZnYXM7z7-OTkcMgGPh">Object Oriented PHP Tutorial For Beginners</a><br>
-  <a href="https://www.youtube.com/playlist?list=PL0eyrZgxdwhypQiZnYXM7z7-OTkcMgGPh">Object Oriented PHP Tutorials</a><br>
-  <a href="https://www.youtube.com/watch?v=ZAPzeoHhid0">Visual Studio Code as a Free PHP IDE Like PHPStorm</a><br>
-
-  -----------------------------------------------------------
-
-        <b>HOW TO SET UP PACKAGE.JSON & VITE.CONFIG.JS</b>
-
-        Use the terminal, and type this to create the package.json:
-
-        npm init -y
-
-        Then use this command to install the vite plugin:
-
-        npm install laravel-vite-plugin --save-dev
-
-        If you still do not have the vite.config.js file, just create it manually, and then paste this inside the file:
-
-        import { defineConfig } from 'vite';
-        import laravel from 'laravel-vite-plugin';
-
-        export default defineConfig({
-            plugins: [
-                laravel([
-                    'resources/css/app.css',
-                    'resources/js/app.js',
-                ]),
-            ],
-        });
-
-    -----------------------------------------------------------
-
-    <b>Fixing npm's standard Windows security restriction</b>
+<div class="seperator1">
+<b>Links</b>
     
-    Open the Start Menu, search for PowerShell, right-click it, and select Run as Administrator.
-    Run the following command to allow scripts for your user account:
-    powershell
+<a href="https://www.youtube.com/watch?v=N8pHSP3ob7o&list=PL0eyrZgxdwhwwQQZA79OzYwl5ewA7HQih&index=27">Password Hash</a><br>
+<a href="https://www.youtube.com/watch?v=FbLYsTHJKDw&list=PL0eyrZgxdwhwwQQZA79OzYwl5ewA7HQih&index=26">Session Security</a><br>
+<a href="https://www.youtube.com/watch?v=ZcwfGXIoA6A">List of All Basic PHP Security You Need to Know</a><br>
+<a href="https://www.youtube.com/watch?v=Anz0ArcQ5kI&list=PL0eyrZgxdwhypQiZnYXM7z7-OTkcMgGPh">Object Oriented PHP Tutorial For Beginners</a><br>
+<a href="https://www.youtube.com/playlist?list=PL0eyrZgxdwhypQiZnYXM7z7-OTkcMgGPh">Object Oriented PHP Tutorials</a><br>
+<a href="https://www.youtube.com/watch?v=ZAPzeoHhid0">Visual Studio Code as a Free PHP IDE Like PHPStorm</a><br>
+</div>
+<div class="seperator2">
+<b>HOW TO SET UP PACKAGE.JSON & VITE.CONFIG.JS</b>
 
-    C:\Users\rohid> Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+Use the terminal, and type this to create the package.json:
 
-    When prompted, type Y (or A for Yes to All) and press Enter.
+npm init -y
 
-    Restart your terminal (or VS Code) and try npm -v again
-    
-    -----------------------------------------------------------
-	
-		Create Laravel new project:
-		--------------------------
+Then use this command to install the vite plugin:
 
-		G:\ProgramFiles\Xamp\htdocs\laravelTut\secondweb> laravel new secondweb
-		PS G:\ProgramFiles\Xamp\htdocs\laravelTut\secondweb> cd secondweb
-		PS G:\ProgramFiles\Xamp\htdocs\laravelTut\secondweb> npm init -y     
-		PS G:\ProgramFiles\Xamp\htdocs\laravelTut\secondweb> npm install vite-plugin --save-dev
+npm install laravel-vite-plugin --save-dev
 
-		// only if required
-		PS G:\ProgramFiles\Xamp\htdocs\laravelTut\secondweb> composer install    
-		G:\ProgramFiles\Xamp\htdocs\laravelTut\secondweb> php artisan key:generate
+If you still do not have the vite.config.js file, just create it manually, and then paste this inside the file:
 
-		PS G:\ProgramFiles\Xamp\htdocs\laravelTut\secondweb> npm run dev
+import { defineConfig } from 'vite';
+import laravel from 'laravel-vite-plugin';
+
+export default defineConfig({
+    plugins: [
+        laravel([
+            'resources/css/app.css',
+            'resources/js/app.js',
+        ]),
+    ],
+});
+</div>
+<div class="seperator1">
+
+<b>Fixing npm's standard Windows security restriction</b>
+
+Open the Start Menu, search for PowerShell, right-click it, and select Run as Administrator.
+Run the following command to allow scripts for your user account:
+powershell
+
+C:\Users\rohid> Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+When prompted, type Y (or A for Yes to All) and press Enter.
+
+Restart your terminal (or VS Code) and try npm -v again
+</div>
+<div class="seperator2">
+<b><u> Create Laravel new project:</u></b>
+
+G:\ProgramFiles\Xamp\htdocs\laravelTut\secondweb> <b>laravel new secondweb</b>
+PS G:\ProgramFiles\Xamp\htdocs\laravelTut\secondweb> <b>cd secondweb</b>
+PS G:\ProgramFiles\Xamp\htdocs\laravelTut\secondweb> <b>npm init -y    </b> 
+PS G:\ProgramFiles\Xamp\htdocs\laravelTut\secondweb> <b>npm install vite-plugin --save-dev</b>
+
+<i>only if required</i>
+PS G:\ProgramFiles\Xamp\htdocs\laravelTut\secondweb> <b>composer install   </b>
+
+<i>generate the app key, only if required</i>
+G:\ProgramFiles\Xamp\htdocs\laravelTut\secondweb> <b>php artisan key:generate</b>
+
+<i>run the development server</i>
+PS G:\ProgramFiles\Xamp\htdocs\laravelTut\secondweb> <b>npm run dev</b>
 
 
-		// create a model/table
-		PS G:\ProgramFiles\Xamp\htdocs\laravelTut\secondweb> php artisan make:model Post -mcr
-		// update the table
-		PS G:\ProgramFiles\Xamp\htdocs\laravelTut\secondweb> php artisan migrate  
-		// recreate/re-migrate particlualr table/file
-		PS G:\ProgramFiles\Xamp\htdocs\laravelTut\secondweb> php artisan migrate --path=database/migrations/0001_01_01_000001_create_cache_table.php
-		// migrate all files again
-		PS G:\ProgramFiles\Xamp\htdocs\laravelTut\secondweb> php artisan migrate:refresh
+<b><u>Laravel Migrations:</u></b>
 
-		// rollback to the last update
-		PS G:\ProgramFiles\Xamp\htdocs\laravelTut\secondweb> php artisan migrate:rollback  
-		// migration to specific file/table
-		PS G:\ProgramFiles\Xamp\htdocs\laravelTut\secondweb> php artisan migrate:rollback --path=database/migrations/0001_01_01_000001_create_cache_table.php
+<i>create a model/table</i>
+PS G:\ProgramFiles\Xamp\htdocs\laravelTut\secondweb> <b>php artisan make:model post -mcr</b>
+
+<i>update the table</i>
+PS G:\ProgramFiles\Xamp\htdocs\laravelTut\secondweb> <b>php artisan migrate</b>
+
+<i>recreate/re-migrate particlualr table/file</i>
+PS G:\ProgramFiles\Xamp\htdocs\laravelTut\secondweb> <b>php artisan migrate --path=database/migrations/0001_01_01_000001_create_cache_table.php</b>
+
+<i>migrate all files again</i>
+PS G:\ProgramFiles\Xamp\htdocs\laravelTut\secondweb> <b>php artisan migrate:refresh</b>
+
+<i>rollback to the last update</i>
+PS G:\ProgramFiles\Xamp\htdocs\laravelTut\secondweb> <b>php artisan migrate:rollback</b>
+
+<i>migration to specific file/table</i>
+PS G:\ProgramFiles\Xamp\htdocs\laravelTut\secondweb> <b>php artisan migrate:rollback --path=database/migrations/0001_01_01_000001_create_cache_table.php</b>
+
+</div>
 
 
-
-
------------------------------------------------------------
-
-
-  </div>
+</div>
 </body>
 </html>
