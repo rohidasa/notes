@@ -53,6 +53,30 @@
     Restart your terminal (or VS Code) and try npm -v again
     
     -----------------------------------------------------------
+	
+		Create Laravel new project:
+		--------------------------
+
+		G:\ProgramFiles\Xamp\htdocs\laravelTut\secondweb> laravel new secondweb
+		PS G:\ProgramFiles\Xamp\htdocs\laravelTut\secondweb> cd secondweb
+		PS G:\ProgramFiles\Xamp\htdocs\laravelTut\secondweb> npm init -y     
+		PS G:\ProgramFiles\Xamp\htdocs\laravelTut\secondweb> npm install vite-plugin --save-dev
+
+		// only if required
+		PS G:\ProgramFiles\Xamp\htdocs\laravelTut\secondweb> composer install    
+		G:\ProgramFiles\Xamp\htdocs\laravelTut\secondweb> php artisan key:generate
+
+		PS G:\ProgramFiles\Xamp\htdocs\laravelTut\secondweb> npm run dev
+
+
+		// create a model/table
+		PS G:\ProgramFiles\Xamp\htdocs\laravelTut\secondweb> php artisan make:model Post -mcr
+		// update the table
+		PS G:\ProgramFiles\Xamp\htdocs\laravelTut\secondweb> php artisan migrate  
+		
+-----------------------------------------------------------
+
+
   </div>
 </body>
 </html>
