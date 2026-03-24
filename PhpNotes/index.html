@@ -73,7 +73,19 @@
 		PS G:\ProgramFiles\Xamp\htdocs\laravelTut\secondweb> php artisan make:model Post -mcr
 		// update the table
 		PS G:\ProgramFiles\Xamp\htdocs\laravelTut\secondweb> php artisan migrate  
-		
+		// recreate/re-migrate particlualr table/file
+		PS G:\ProgramFiles\Xamp\htdocs\laravelTut\secondweb> php artisan migrate --path=database/migrations/0001_01_01_000001_create_cache_table.php
+		// migrate all files again
+		PS G:\ProgramFiles\Xamp\htdocs\laravelTut\secondweb> php artisan migrate:refresh
+
+		// rollback to the last update
+		PS G:\ProgramFiles\Xamp\htdocs\laravelTut\secondweb> php artisan migrate:rollback  
+		// migration to specific file/table
+		PS G:\ProgramFiles\Xamp\htdocs\laravelTut\secondweb> php artisan migrate:rollback --path=database/migrations/0001_01_01_000001_create_cache_table.php
+
+
+
+
 -----------------------------------------------------------
 
 
