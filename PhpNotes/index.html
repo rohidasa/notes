@@ -4,27 +4,35 @@
 <title>Font list</title>
 <style>
 body {
-font-family: Arial, sans-serif;
-color: darkslategrey;
+	font-family: Arial, sans-serif;
+	color: darkslategrey;
 }
 .seperator1 {
-background-color: lightblue;
-border-radius: 10px;
-padding: 20px;;
-padding-left: 50px;
-margin:0;
+	background-color: #cee3e9;
+	border-radius: 10px;
+	padding: 20px;;
+	padding-left: 50px;
+	margin:0;
+	white-space: pre;
+	margin-bottom: 1px;
 }
 .seperator2 {
-background-color: rgb(230, 230, 173);
-border-radius: 10px;
-padding: 20px;;
-padding-left: 50px;
-margin:0;
+	background-color:rgb(235 235 191);
+	border-radius: 10px;
+	padding: 20px;;
+	padding-left: 50px;
+	margin:0;
+	white-space: pre;
+	margin-bottom: 1px;
+}
+
+.image{
+	max-width: 100%; height: auto; display: block;
 }
 </style>
 </head>
 <body>
-<div style="white-space: pre;">
+<div>
 <div class="seperator1">
 <b>Links</b>
     
@@ -95,7 +103,7 @@ PS G:\ProgramFiles\Xamp\htdocs\laravelTut\secondweb> <b>npm run dev</b>
 <b><u>Laravel Migrations:</u></b>
 
 <i>create a model/table</i>
-PS G:\ProgramFiles\Xamp\htdocs\laravelTut\secondweb> <b>php artisan make:model post -mcr</b>
+PS G:\ProgramFiles\Xamp\htdocs\laravelTut\secondweb> <b>php artisan make:model Post -mcr</b>
 
 <i>update the table</i>
 PS G:\ProgramFiles\Xamp\htdocs\laravelTut\secondweb> <b>php artisan migrate</b>
@@ -112,7 +120,45 @@ PS G:\ProgramFiles\Xamp\htdocs\laravelTut\secondweb> <b>php artisan migrate:roll
 <i>migration to specific file/table</i>
 PS G:\ProgramFiles\Xamp\htdocs\laravelTut\secondweb> <b>php artisan migrate:rollback --path=database/migrations/0001_01_01_000001_create_cache_table.php</b>
 
+<i>Laravel CRUD Operations for Posts</i>
+<a href="https://gemini.google.com/share/9deb88497563">Click here to view Google gemini conversation</a>
+
 </div>
+<div class="seperator1">
+<b><u>VS Code Usefull Extensions</u></b><div id="vscode-screenshot"></div>
+</div>
+
+
+
+
+
+
+
+
+<!-- //template for rendering the image of VS Code extensions, we can reuse this template for any image we want to render in the future -->
+<template id="image-template">
+  <a class="image-link" href="" target="_blank" rel="noopener noreferrer">
+    <img class="image" src="" alt="VS Code Useful Extensions" />
+  </a>
+</template>
+
+<script>
+  function renderVsExtImage(imageFilename, containerId) {
+    const tpl = document.getElementById('image-template');
+    const container = document.getElementById(containerId);
+    if (!tpl || !container) return;
+    const clone = tpl.content.cloneNode(true);
+    const link = clone.querySelector('a');
+    const img = clone.querySelector('img');
+    if (!link || !img) return;
+    link.href = imageFilename;
+    img.src = imageFilename;
+    container.innerHTML = '';
+    container.appendChild(clone);
+  }
+
+  renderVsExtImage('images/vs-ext.JPG', 'vscode-screenshot');
+</script>
 
 
 </div>
