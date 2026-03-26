@@ -34,7 +34,7 @@ body {
 <body>
 <div>
 <div class="seperator1">
-<b>Links</b>
+<h2 class="title">Links</h2>
     
 <a href="https://www.youtube.com/watch?v=N8pHSP3ob7o&list=PL0eyrZgxdwhwwQQZA79OzYwl5ewA7HQih&index=27">Password Hash</a><br>
 <a href="https://www.youtube.com/watch?v=FbLYsTHJKDw&list=PL0eyrZgxdwhwwQQZA79OzYwl5ewA7HQih&index=26">Session Security</a><br>
@@ -44,7 +44,7 @@ body {
 <a href="https://www.youtube.com/watch?v=ZAPzeoHhid0">Visual Studio Code as a Free PHP IDE Like PHPStorm</a><br>
 </div>
 <div class="seperator2">
-<b>HOW TO SET UP PACKAGE.JSON & VITE.CONFIG.JS</b>
+<h2 class="title">HOW TO SET UP PACKAGE.JSON & VITE.CONFIG.JS</h2>
 
 Use the terminal, and type this to create the package.json:
 
@@ -70,7 +70,7 @@ export default defineConfig({
 </div>
 <div class="seperator1">
 
-<b>Fixing npm's standard Windows security restriction</b>
+<h2 class="title">Fixing npm's standard Windows security restriction</h2>
 
 Open the Start Menu, search for PowerShell, right-click it, and select Run as Administrator.
 Run the following command to allow scripts for your user account:
@@ -83,7 +83,7 @@ When prompted, type Y (or A for Yes to All) and press Enter.
 Restart your terminal (or VS Code) and try npm -v again
 </div>
 <div class="seperator2">
-<b><u> Create Laravel new project:</u></b>
+<h2 class="title">Create Laravel new project:</h2>
 
 G:\ProgramFiles\Xamp\htdocs\laravelTut\secondweb> <b>laravel new secondweb</b>
 PS G:\ProgramFiles\Xamp\htdocs\laravelTut\secondweb> <b>cd secondweb</b>
@@ -100,7 +100,7 @@ G:\ProgramFiles\Xamp\htdocs\laravelTut\secondweb> <b>php artisan key:generate</b
 PS G:\ProgramFiles\Xamp\htdocs\laravelTut\secondweb> <b>npm run dev</b>
 
 
-<b><u>Laravel Migrations:</u></b>
+<h2 class="title">Laravel Migrations:</h2>
 
 <i>create a model/table</i>
 PS G:\ProgramFiles\Xamp\htdocs\laravelTut\secondweb> <b>php artisan make:model Post -mcr</b>
@@ -125,8 +125,66 @@ PS G:\ProgramFiles\Xamp\htdocs\laravelTut\secondweb> <b>php artisan migrate:roll
 
 </div>
 <div class="seperator1">
-<b><u>VS Code Usefull Extensions</u></b><div id="vscode-screenshot"></div>
+<h2 class="title">VS Code Usefull Extensions</h2><div id="vscode-screenshot"></div>
 </div>
+
+</div>
+<div class="seperator2">
+<h2 class="title">Securing PHP Apps: Handling Mass Assignment Vulnerabilities </h2><div id="vscode-screenshot"></div>
+<a href="https://gemini.google.com/share/6c5834eec290">Click here to view Google gemini conversation</a>
+</div>
+
+<div class="seperator1">
+<h2 class="title">Installing Docker on Windows</h2>
+<b>1. Check System Requirements</b>
+Before starting, ensure your PC meets these minimum specs:
+* **OS:** Windows 10 (Build 19045+) or Windows 11.
+* **RAM:** 4GB minimum (8GB recommended).
+* **BIOS:** **Hardware Virtualization** must be enabled (usually found under "Advanced" or "CPU Configuration" in your BIOS settings).
+
+<b>2. Install WSL 2 (The Engine)</b>
+Docker Desktop uses WSL 2 as its backend for better performance.
+1.  Open **PowerShell** as an Administrator (Right-click Start > Terminal Admin/PowerShell Admin).
+2.  Type the following command and press Enter:
+    ```powershell
+    wsl --install
+    ```
+3.  **Restart your computer** when prompted. 
+4.  After restarting, a Linux terminal (usually Ubuntu) will pop up. Follow the prompts to create a **username** and **password**.
+
+<b>3. Download and Install Docker Desktop</b>
+1.  Go to the [Official Docker Desktop Download Page](https://www.docker.com/products/docker-desktop).
+2.  Click **Download for Windows**.
+3.  Run the `.exe` installer.
+4.  **Crucial Step:** When the "Configuration" window appears, ensure **"Use WSL 2 instead of Hyper-V (recommended)"** is checked.
+5.  Follow the prompts to finish the installation and click **Close and restart** (if required).
+
+
+
+<b>4. Final Configuration</b>
+Once your PC is back up:
+1.  Launch **Docker Desktop** from your Start menu.
+2.  Accept the **Docker Subscription Service Agreement**.
+3.  In the Docker Desktop dashboard, go to **Settings (gear icon) > General** and verify that "Use the WSL 2 based engine" is selected.
+4.  Go to **Resources > WSL Integration** and toggle "Enable" for your Linux distribution (e.g., Ubuntu) if you plan to use the Linux terminal.
+
+---
+
+<b>5. Verify the Installation</b>
+To make sure everything is humming along perfectly, open **PowerShell** or **Command Prompt** and run:
+
+```bash
+docker run hello-world
+```
+
+If you see a message saying **"Hello from Docker!"**, you are officially ready to containerize.
+
+> **Note:** If you are using Docker for a company with more than 250 employees or $10M in annual revenue, you'll eventually need a paid subscription (Docker Pro, Team, or Business). For personal use, it’s completely free.
+
+Would you like me to show you how to pull your first image (like Nginx or Python) and run it?
+</div>
+</div>
+
 
 
 
