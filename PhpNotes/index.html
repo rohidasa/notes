@@ -29,12 +29,43 @@ body {
 .image{
 	max-width: 100%; height: auto; display: block;
 }
+#sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 200px;
+    height: 100vh;
+    background-color: #4b6171;
+    padding: 10px;
+    overflow-y: auto;
+    border-right: 1px solid #ccc;
+    color: white;
+}
+
+#sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+#sidebar ul li {
+    margin-bottom: 20px;
+}
+#sidebar a {
+    color: white;
+    text-decoration: none;
+}
+
+#sidebar a:hover {
+    color: white;
+    background-color: rgb(145, 154, 89);
+}
 </style>
 </head>
 <body>
-<div>
+<div style="padding-left: 220px;">
+<div id="sidebar"><ul></ul></div>
 <div class="seperator1">
-<h2 class="title">Links</h2>
+<h2 id="links" class="title">Links</h2>
     
 <a href="https://www.youtube.com/watch?v=N8pHSP3ob7o&list=PL0eyrZgxdwhwwQQZA79OzYwl5ewA7HQih&index=27">Password Hash</a><br>
 <a href="https://www.youtube.com/watch?v=FbLYsTHJKDw&list=PL0eyrZgxdwhwwQQZA79OzYwl5ewA7HQih&index=26">Session Security</a><br>
@@ -122,13 +153,12 @@ PS G:\ProgramFiles\Xamp\htdocs\laravelTut\secondweb> <b>php artisan migrate:roll
 
 <i>Laravel CRUD Operations for Posts</i>
 <a href="https://gemini.google.com/share/9deb88497563">Click here to view Google gemini conversation</a>
-
 </div>
+
 <div class="seperator1">
 <h2 class="title">VS Code Usefull Extensions</h2><div id="vscode-screenshot"></div>
 </div>
 
-</div>
 <div class="seperator2">
 <h2 class="title">Securing PHP Apps: Handling Mass Assignment Vulnerabilities </h2><div id="vscode-screenshot"></div>
 <a href="https://gemini.google.com/share/6c5834eec290">Click here to view Google gemini conversation</a>
@@ -183,14 +213,11 @@ If you see a message saying **"Hello from Docker!"**, you are officially ready t
 
 Would you like me to show you how to pull your first image (like Nginx or Python) and run it?
 </div>
+<div class="seperator2">
+<h2 class="title">Working with Route Parameters in Laravel</h2>
+<a href="https://gemini.google.com/share/9c8e7a1b0c5e">Click here to view Video tutorial</a>
 </div>
-
-
-
-
-
-
-
+</div>
 
 
 <!-- //template for rendering the image of VS Code extensions, we can reuse this template for any image we want to render in the future -->
@@ -216,6 +243,28 @@ Would you like me to show you how to pull your first image (like Nginx or Python
   }
 
   renderVsExtImage('images/vs-ext.JPG', 'vscode-screenshot');
+
+
+  function createSidebar() {
+    const sidebarUl = document.querySelector('#sidebar ul');
+    if (!sidebarUl) return;
+    sidebarUl.innerHTML = '';
+    const headings = document.querySelectorAll('h2.title');
+    headings.forEach(h2 => {
+        let id = h2.id;
+        if (!id) {
+            id = h2.textContent.trim().toLowerCase().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, '-');
+            h2.id = id;
+        }
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = '#' + id;
+        a.textContent = h2.textContent.trim();
+        li.appendChild(a);
+        sidebarUl.appendChild(li);
+    });
+  }
+  createSidebar();
 </script>
 
 
