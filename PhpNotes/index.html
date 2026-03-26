@@ -58,9 +58,15 @@ body {
     text-decoration: none;
 }
 
+
+/* a[href]::before {
+    content: "🔗 ";
+} */
+a[href*="https://gemini.google.com"]::before {
+    content: "♊ ";
+}
 a[href*="youtube.com"]::before {
     content: "▶️ ";
-    text-decoration: none;
 }
 
 a[href*="youtube.com"] {
@@ -74,11 +80,21 @@ a[href*="youtube.com"] {
     color: white;
     background-color: rgb(145, 154, 89);
 }
+#search {
+    width: calc(100% - 20px);
+    padding: 5px;
+    margin: 10px;
+    box-sizing: border-box; 
+    /* background-color: #5a6f7f; */
+    color: blue;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
 </style>
 </head>
 <body>
 <div style="padding-left: 220px;">
-<div id="sidebar"><ul></ul></div>
+<div id="sidebar"><input type="text" id="search" placeholder="Search..."><ul></ul></div>
 <div class="seperator1">
 <h2 id="links" class="title">Links</h2>
     
@@ -280,6 +296,40 @@ Would you like me to show you how to pull your first image (like Nginx or Python
     });
   }
   createSidebar();
+
+  const searchInput = document.getElementById('search');
+  searchInput.addEventListener('input', function() {
+    const query = this.value.toLowerCase();
+    const sidebarUl = document.querySelector('#sidebar ul');
+    const lis = sidebarUl.querySelectorAll('li');
+    let firstMatch = null;
+    lis.forEach(li => {
+      const a = li.querySelector('a');
+      const href = a.getAttribute('href');
+      const id = href.substring(1);
+      const h2 = document.getElementById(id);
+      // get all text from h2 to next h2
+      let sectionText = h2.textContent.toLowerCase();
+      let next = h2.nextElementSibling;
+      while (next && !next.matches('h2.title')) {
+        sectionText += ' ' + next.textContent.toLowerCase();
+        next = next.nextElementSibling;
+      }
+      if (sectionText.includes(query)) {
+        li.style.display = '';
+        if (!firstMatch) firstMatch = a;
+      } else {
+        li.style.display = 'none';
+      }
+    });
+    if (firstMatch && query) {
+      const targetId = firstMatch.getAttribute('href').substring(1);
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  });
 </script>
 
 
