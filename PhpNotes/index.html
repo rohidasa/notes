@@ -10,11 +10,13 @@ html {
 body {
 	font-family: Arial, sans-serif;
 	color: darkslategrey;
+  line-height: 25px;
 }
+
 .seperator1 {
 	background-color: #cee3e9;
 	border-radius: 10px;
-	padding: 20px;;
+	padding: 0 20px 20px 20px;
 	padding-left: 50px;
 	margin:0;
 	white-space: pre;
@@ -23,11 +25,15 @@ body {
 .seperator2 {
 	background-color:rgb(235 235 191);
 	border-radius: 10px;
-	padding: 20px;;
+	padding: 0 20px 20px 20px;
 	padding-left: 50px;
 	margin:0;
 	white-space: pre;
 	margin-bottom: 1px;
+}
+.title {
+  margin-top: 0;
+  margin-bottom: 0  ;
 }
 
 .image{
@@ -50,6 +56,7 @@ body {
     list-style: none;
     padding: 0;
     margin: 10px 0;
+    line-height: 22px;
 }
 #sidebar ul li {
     margin-bottom: 20px;
@@ -91,6 +98,32 @@ a[href*="youtube.com"] {
     border: 1px solid #ccc;
     border-radius: 4px;
 }
+pre {
+    background-color: #282c34;
+    color: #abb2bf;
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 10px 0;
+    border-left: 4px solid #61afef;
+}
+code {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #f5f5f5;
+    padding: 2px 6px;
+    border-radius: 3px;
+    color: #d63384;
+    font-size: 18px;
+}
+pre code {
+    background-color: transparent;
+    color: #abb2bf;
+    padding: 0;
+    border-radius: 0;
+}
 </style>
 </head>
 <body>
@@ -113,16 +146,12 @@ a[href*="youtube.com"] {
 <h2 class="title">HOW TO SET UP PACKAGE.JSON & VITE.CONFIG.JS</h2>
 
 Use the terminal, and type this to create the package.json:
-
-npm init -y
-
+<pre><code class="language-bash">npm init -y</code></pre>
 Then use this command to install the vite plugin:
-
-npm install laravel-vite-plugin --save-dev
+<pre><code class="language-bash">npm install laravel-vite-plugin --save-dev</code></pre>
 
 If you still do not have the vite.config.js file, just create it manually, and then paste this inside the file:
-
-import { defineConfig } from 'vite';
+<pre><code class="language-javascript">import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
 
 export default defineConfig({
@@ -132,7 +161,7 @@ export default defineConfig({
             'resources/js/app.js',
         ]),
     ],
-});
+});</code></pre>
 </div>
 
 <div class="seperator1">
@@ -141,9 +170,7 @@ export default defineConfig({
 
 Open the Start Menu, search for PowerShell, right-click it, and select Run as Administrator.
 Run the following command to allow scripts for your user account:
-powershell
-
-C:\Users\rohid> Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+<pre><code class="language-powershell">C:\Users\rohid> Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser</code></pre>
 
 When prompted, type Y (or A for Yes to All) and press Enter.
 
@@ -152,41 +179,39 @@ Restart your terminal (or VS Code) and try npm -v again
 
 <div class="seperator2">
 <h2 class="title">Create Laravel new project:</h2>
+<pre><code class="language-bash">laravel new secondweb
+cd secondweb
+npm init -y
+npm install vite-plugin --save-dev
 
-G:\ProgramFiles\Xamp\htdocs\laravelTut\secondweb> <b>laravel new secondweb</b>
-PS G:\ProgramFiles\Xamp\htdocs\laravelTut\secondweb> <b>cd secondweb</b>
-PS G:\ProgramFiles\Xamp\htdocs\laravelTut\secondweb> <b>npm init -y    </b> 
-PS G:\ProgramFiles\Xamp\htdocs\laravelTut\secondweb> <b>npm install vite-plugin --save-dev</b>
+# only if required
+composer install
 
-<i>only if required</i>
-PS G:\ProgramFiles\Xamp\htdocs\laravelTut\secondweb> <b>composer install   </b>
+# generate the app key, only if required
+php artisan key:generate
 
-<i>generate the app key, only if required</i>
-G:\ProgramFiles\Xamp\htdocs\laravelTut\secondweb> <b>php artisan key:generate</b>
-
-<i>run the development server</i>
-PS G:\ProgramFiles\Xamp\htdocs\laravelTut\secondweb> <b>npm run dev</b>
+# run the development server
+npm run dev</code></pre>
 
 
 <h2 class="title">Laravel Migrations:</h2>
+<pre><code class="language-bash"># create a model/table
+php artisan make:model Post -mcr
 
-<i>create a model/table</i>
-PS G:\ProgramFiles\Xamp\htdocs\laravelTut\secondweb> <b>php artisan make:model Post -mcr</b>
+# update the table
+php artisan migrate
 
-<i>update the table</i>
-PS G:\ProgramFiles\Xamp\htdocs\laravelTut\secondweb> <b>php artisan migrate</b>
+# recreate/re-migrate particular table/file
+php artisan migrate --path=database/migrations/0001_01_01_000001_create_cache_table.php
 
-<i>recreate/re-migrate particlualr table/file</i>
-PS G:\ProgramFiles\Xamp\htdocs\laravelTut\secondweb> <b>php artisan migrate --path=database/migrations/0001_01_01_000001_create_cache_table.php</b>
+# migrate all files again
+php artisan migrate:refresh
 
-<i>migrate all files again</i>
-PS G:\ProgramFiles\Xamp\htdocs\laravelTut\secondweb> <b>php artisan migrate:refresh</b>
+# rollback to the last update
+php artisan migrate:rollback
 
-<i>rollback to the last update</i>
-PS G:\ProgramFiles\Xamp\htdocs\laravelTut\secondweb> <b>php artisan migrate:rollback</b>
-
-<i>migration to specific file/table</i>
-PS G:\ProgramFiles\Xamp\htdocs\laravelTut\secondweb> <b>php artisan migrate:rollback --path=database/migrations/0001_01_01_000001_create_cache_table.php</b>
+# migration to specific file/table
+php artisan migrate:rollback --path=database/migrations/0001_01_01_000001_create_cache_table.php</code></pre>
 
 <i>Laravel CRUD Operations for Posts</i>
 <a href="https://gemini.google.com/share/9deb88497563">Click here to view Google gemini conversation</a>
@@ -239,10 +264,7 @@ Once your PC is back up:
 
 <b>5. Verify the Installation</b>
 To make sure everything is humming along perfectly, open **PowerShell** or **Command Prompt** and run:
-
-```bash
-docker run hello-world
-```
+<pre><code class="language-bash">docker run hello-world</code></pre>
 
 If you see a message saying **"Hello from Docker!"**, you are officially ready to containerize.
 
@@ -259,12 +281,33 @@ Would you like me to show you how to pull your first image (like Nginx or Python
 <a href="https://www.youtube.com/watch?v=C63AxM2y3pc&list=PLr3d3QYzkw2xTKNyWpm7XZ63j-HntTyvC&index=14">Program With Gio: How Middleware Works in Laravel</a>
 </div>
 
-
 <div class="seperator1">
 <h2 class="title">Simple CSS Grid Templates</h2>
 <a href="https://www.quackit.com/html/templates/css_grid_templates.cfm" target="_blank" rel="noopener noreferrer">Simple CSS Grid Templates</a>
 <a href="https://www.quackit.com/html/templates/css_flexbox_templates.cfm" target="_blank" rel="noopener noreferrer">Simple CSS Flexbox Templates</a>
 </div>
+
+<div class="seperator2">
+<h2 class="title">Github - Public APIs: A Collection of Free APIs for Development</h2>
+<a href="https://github.com/public-apis/public-apis" target="_blank" rel="noopener noreferrer">Github - Public APIs: A Collection of Free APIs for Development</a>
+</div>
+
+<div class="seperator1">
+  <h2 class="title">JSMastery React JS & Tailwind Training: Notes</h2>
+  <a href="https://www.youtube.com/watch?v=6biMWgD6_JY&t=159s" target="_blank" rel="noopener noreferrer">TailWind Tutorial</a>
+  <a href="https://www.youtube.com/watch?v=dCLhUialKPQ" target="_blank" rel="noopener noreferrer">React JS Tutorial for Beginners</a>
+<a href="https://flexboxfroggy.com/" target="_blank" rel="noopener noreferrer">Flexbox Froggy</a>
+<a href="https://codepip.com/games/grid-garden/" target="_blank" rel="noopener noreferrer">Grid Garden</a>
+<a href="https://codingfantasy.com/games/css-grid-attack/play" target="_blank" rel="noopener noreferrer">CSS Grid Attack</a>
+<a href="https://resource.jsmastery.pro/tailwind-guide" target="_blank" rel="noopener noreferrer">Tailwind Guide</a>
+<a href="https://flowbite.com/docs/components/spinner/" target="_blank" rel="noopener noreferrer">Flowbite spinner tailwind svg code:</a>
+<a href="https://cloud.appwrite.io/" target="_blank" rel="noopener noreferrer">Appwrite Cloud: Auth, Databases, Storage, Functions, Messaging, Realtime, and web hosting</a>
+<a href="https://api.themoviedb.org/3" target="_blank" rel="noopener noreferrer">TMDB: The Movie Database API</a>
+
+React 'use-debounce' hook package
+<pre><code class="language-bash">npm install react-use</code></pre>
+</div>
+
 
 
 </div>
