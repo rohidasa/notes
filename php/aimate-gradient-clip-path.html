@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #061433; /* Matches the exact dark blue in your image */
+    overflow: hidden;
+    font-family: 'Arial Black', Gadget, sans-serif; /* Thick font matches your image text */
+}
+
+.outer {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inner {
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background-color: transparent;
+    overflow: hidden;
+    filter: blur(80px); /* Massive blur replicates the glow structure in the image */
+    position: absolute;
+    z-index: 1;
+    opacity: 0.3; /* Slightly transparent to enhance the glow effect */
+}
+
+.blob {
+    width: 100%;
+    height: 100%;
+    /* Gradient matches the vibrant greens and purples visible in your image */
+    background: radial-gradient(circle at center, rgb(128, 240, 36), rgb(212, 239, 10), #9509e1, rgb(1, 253, 253), #ff005e, #2528f5);
+    background-size: 200% 200%;
+    animation: morphMoveAndPan 15s ease-in-out infinite alternate;
+}
+
+/* Centers the title perfectly on top of the glowing aura */
+.title-container {
+    position: absolute;
+    z-index: 2; /* Ensures text stays sharply layered above the blurred layout */
+    pointer-events: none;
+    mix-blend-mode: screen
+}
+
+h1 {
+    font-size: 9rem; /* Bold, high-impact display size */
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    color: #ffffff; /* Clean white color exactly like the uploaded image */
+}
+
+@keyframes morphMoveAndPan {
+    0% {
+        clip-path: polygon(30% 0%, 65% 10%, 85% 30%, 75% 65%, 85% 95%, 45% 90%, 20% 100%, 5% 70%, 15% 40%, 0% 15%);
+        transform: translate(20px, -20px) rotate(0deg) scale(1.5);
+        background-position: 0% 0%;
+    }
+    50% {
+        clip-path: polygon(15% 20%, 45% 5%, 90% 15%, 70% 40%, 95% 70%, 60% 85%, 25% 80%, 10% 95%, 0% 60%, 5% 40%);
+        transform: translate(-30px, 30px) rotate(180deg) scale(1.1);
+        background-position: 100% 100%;
+    }
+    100% {
+        clip-path: polygon(50% 5%, 80% 25%, 70% 50%, 95% 75%, 65% 95%, 35% 80%, 10% 85%, 15% 55%, 0% 30%, 25% 25%);
+        transform: translate(10px, -10px) rotate(360deg) scale(0.9);
+        background-position: 0% 50%;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="outer">
+    <!-- Overlay Header -->
+    <div class="title-container">
+        <h1>BLOB</h1>
+    </div>
+
+    <!-- Background Glow Aura -->
+    <div class="inner">
+        <div class="blob"></div> 
+    </div>
+</div>
+
+</body>
+</html>

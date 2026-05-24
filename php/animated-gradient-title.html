@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Google Fonts import for identical modern ultra-serif and body font pairings -->
+<link rel="preconnect" href="https://googleapis.com">
+<link rel="preconnect" href="https://gstatic.com" crossorigin>
+<link href="https://googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500&family=Syne:wght@800&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff; /* Clean white canvas background */
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Page wrapper container */
+.container {
+    max-width: 900px;
+    text-align: center;
+    padding: 20px;
+    position: relative; /* Anchor point for our background blur object */
+}
+
+/* BACKGROUND OBJECT: Soft blurred light-blue ambient glow */
+.container::before {
+    content: "";
+    position: absolute;
+    top: -10%;
+    left: 15%;
+    width: 70%;
+    height: 60%;
+    /* Replicates the very subtle light blue radial haze visible behind the date capsule */
+    background: radial-gradient(circle, rgba(0, 188, 255, 0.12) 0%, rgba(255, 255, 255, 0) 70%);
+    filter: blur(60px);
+    z-index: -1; /* Placed completely under the text layer */
+    pointer-events: none;
+}
+
+/* Small top date capsule wrapper */
+.date-badge {
+    display: inline-block;
+    font-family: monospace;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #64748b;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent canvas frame */
+    backdrop-filter: blur(8px);
+    border: 1px solid #e2e8f0;
+    padding: 8px 18px;
+    border-radius: 50px;
+    margin-bottom: 2.5rem;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+/* THE GRADIENT TEXT ENGINE */
+.headline {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 5.5rem; 
+    line-height: 0.95;   /* Tight line stacking precisely matching the screenshot */
+    margin: 0 0 2.5rem 0;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    
+    /* GRADIENT CONFIGURATION */
+    background: linear-gradient(180deg, #114c7a 0%, #00bcff 100%);
+    background-size: 100% 200%; /* Extended vertically to give room for panning */
+    
+    /* TEXT CLIP MASK */
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    /* RUNNING ENGINE */
+    animation: gradientPan 6s ease-in-out infinite alternate;
+}
+
+/* Bottom description caption */
+.subtext {
+    font-size: 1.15rem;
+    color: #334155;
+    line-height: 1.6;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+/* ANIMATION PHYSICS: Smoothly pans the gradient colors up and down inside the lines */
+@keyframes gradientPan {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 0% 100%;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Date Meta Section -->
+    <div class="date-badge">
+        May 11, 2026 &nbsp;/&nbsp; Updated May 11, 2026
+    </div>
+
+    <!-- Animated Gradient Typography Block -->
+    <h1 class="headline">
+        I Built A<br>Globally<br>Distributed<br>Blog Platform<br>For ~$1/Month
+    </h1>
+
+    <!-- Footer Summary Section -->
+    <p class="subtext">
+        Building an edge-first blog platform with Astro, Cloudflare, Turso, and motion-heavy frontend engineering with React islands.
+    </p>
+</div>
+
+</body>
+</html>
