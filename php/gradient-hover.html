@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#grad1 {
+  height: 200px;
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: linear-gradient(to top, red, yellow);
+}
+
+/* ==========================================================================
+   1. Base Class (Shared Layout & Logic)
+   ========================================================================== */
+.fade-box, .fade-box2 {
+  position: relative;
+  z-index: 1;
+  padding: 15px 30px;
+  background: #222;
+  color: #fff;
+  border: 1px solid #444;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* Shared overlay structure for both classes */
+.fade-box::before, .fade-box2::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Shared hover trigger to fade the gradient in */
+.fade-box:hover::before, .fade-box2:hover::before {
+  opacity: 1;
+}
+
+/* ==========================================================================
+   2. Unique Gradients for Each Class
+   ========================================================================== */
+
+/* Original Gradient: Pink to Transparent */
+.fade-box::before {
+  background-image: linear-gradient(45deg, rgba(255, 0, 128, 0.8), rgba(0, 255, 255, 0));
+}
+
+.fade-box2::before {
+  /*inset: 0;  Stretches to fill the entire parent container */
+  z-index: -1; /* Pushes the gradient behind the text */
+  width: 100%;
+  height: calc(100% - 0px);
+  left:0;
+  bottom:0;
+
+  
+  /* Transparent gradient using RGBA (Red, Green, Blue, Alpha) */
+  background-image: linear-gradient(0, rgba(255, 0, 128, 0.5), rgba(134, 1345, 136, 0.0) , rgba(255, 1345, 255, 0.5), rgba(134, 1345, 136, 0.0) , rgba(255, 1345, 255, 0.5));
+}
+
+
+</style>
+</head>
+<body>
+
+<h1>Linear Gradient - Bottom to Top</h1>
+<p>This linear gradient starts red at the bottom, transitioning to yellow at the top:</p>
+
+<div id="grad1"></div>
+
+
+<button class="fade-box">Hover Me</button>
+<button class="fade-box2">Hover Me</button>
+
+
+</body>
+</html>
+
+
