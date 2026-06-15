@@ -400,14 +400,94 @@ React 'use-debounce' hook package
 <h2 class="title">Wordpress Official Courses</h2>
 <a href="https://learn.wordpress.org/courses/" target="_blank" rel="noopener noreferrer">Wordpress Official Courses</a>
 <a href="https://developer.wordpress.org/block-editor/">Block Editor Handbook</a>
+<a href="https://github.com/wptrainingteam/beginner-developer/">Beginner Developer learning assets github</a>
 </div>
 
 <div class="seperator1">
 <h2 class="title">Wordpress Security</h2>
+<a href="https://learn.wordpress.org/lesson/securely-developing-plugins-and-themes/">Tutorial</a>
 <a href="https://developer.wordpress.org/apis/security/">All Secrutiy Docs</a>
 <a href="https://developer.wordpress.org/apis/security/sanitizing/">Sanitizing</a>
 <a href="https://developer.wordpress.org/apis/security/data-validation/">Validating</a>
 <a href="https://developer.wordpress.org/apis/security/escaping/">Escaping</a>
+
+<h3>Few usefull functions</h3>
+<pre><code>
+    //Sanitizing:
+    $name = <b>sanitize_text_field</b>( $_POST['name'] );
+    $email = <b>sanitize_email</b>( $_POST['email'] );
+
+    //wrong usage:
+    $id = $_POST['id'];
+
+    //correct: validate id's as int.
+    $id = <b>(int)</b> $_POST['id'];
+    if ($id === 0){
+        // return early with an error
+        <b>return wp_send_json( array( 'result' => 'Invalid ID passed' ) );</b>
+    }    
+    //Escaping outputs:
+    &lt;td&gt;&lt;?php echo <b>esc_html</b>( $submission-&gt;name ); ?&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;?php echo <b>esc_html</b>( $submission-&gt;email ); ?&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;a class="delete-submission" data-id="&lt;?php echo <b>(int)</b> $submission-&gt;id?&gt;" style="cursor:pointer;"&gt;Delete&lt;/a&gt;&lt;/td&gt;
+
+
+    //Preventing invalid requests/ Cross-site Request Forgery (CSRF)
+    &lt;?php
+    add_shortcode( 'wp_learn_form_shortcode', 'wp_learn_form_shortcode' );
+    function wp_learn_form_shortcode() {
+        <b>ob_start();</b>
+        ?&gt;
+        &lt;form method="post"&gt;
+            &lt;input type="hidden" name="wp_learn_form" value="submit"&gt;
+            <b>wp_nonce_field( 'wp_learn_form_nonce_action', 'wp_learn_form_nonce_field' );</b>
+            &lt;div&gt;
+                &lt;label for="email"&gt;Name&lt;/label&gt;
+                &lt;input type="text" id="name" name="name" placeholder="Name"&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+                &lt;label for="email"&gt;Email address&lt;/label&gt;
+                &lt;input type="text" id="email" name="email" placeholder="Email address"&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+                &lt;input type="submit" id="submit" name="submit" value="Submit"&gt;
+            &lt;/div&gt;
+        &lt;/form&gt;
+        &lt;?php
+        <b>$form = ob_get_clean();
+        return $form; </b>
+    }
+    ?&gt;
+
+    //Validating Cross-site Request Forgery (CSRF)
+    someFunction ()
+    {
+        <b>if(!wp_verify_nonce($_POST['wp_learn_form_nonce_field'], 'wp_learn_form_nonce_action'))
+        {
+            wp_redirect(WP_LEARN_ERROR_PAGE);
+            die();</b>
+        }
+    }
+
+    //Preventing unauthenticated users
+    function wp_learn_delete_form_submission() {
+       <b> if ( ! current_user_can( 'manage_options' ) ) {
+            return wp_send_json( array( 'result' => 'Authentication error' ) );
+        }</b>
+        // rest of function code
+    }
+
+
+    // Escape css class attributes
+    &lt;div id="wp_learn_form" class="&lt;?php echo <b>esc_attr</b>( $atts['class'] ) ?&gt;"&gt;
+</code></pre>
+
+<a href="https://learn.wordpress.org/lesson/tools-to-detect-security-vulnerabilities/">Tools to detect security vulnerabilities</a>
+<a href="https://wordpress.org/plugins/theme-check/">Theme Check</a>
+<a href="https://wordpress.org/plugins/plugin-check/">Plugin Check (PCP)</a>
+<a href="https://marketplace.visualstudio.com/search?term=phpcs&target=VSCode&category=All%20categories&sortBy=Relevance">PHPCS for VS Code</a>
+<a href="https://github.com/PHPCSStandards/PHP_CodeSniffer">PHP_CodeSniffer</a>
+
 </div>
 
 <div class="seperator2">
