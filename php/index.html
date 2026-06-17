@@ -13,8 +13,7 @@ body {
   line-height: 25px;
 }
 
-.seperator1 {
-	background-color: #cee3e9;
+.seperator {
 	border-radius: 10px;
 	padding: 0 20px 20px 20px;
 	padding-left: 50px;
@@ -22,14 +21,17 @@ body {
 	white-space: pre;
 	margin-bottom: 1px;
 }
-.seperator2 {
+.seperator[data-variant="1"] {
+	background-color: #cee3e9;
+}
+.seperator[data-variant="2"] {
 	background-color:rgb(235 235 191);
-	border-radius: 10px;
-	padding: 0 20px 20px 20px;
-	padding-left: 50px;
-	margin:0;
-	white-space: pre;
-	margin-bottom: 1px;
+}
+.seperator.highlighted {
+	border: 4px solid #ff6b00 !important;
+	box-shadow: 0 0 35px rgba(255, 107, 0, 1), inset 0 0 20px rgba(255, 107, 0, 0.3) !important;
+	transition: all 0.3s ease;
+	background-color: rgba(255, 107, 0, 0.05) !important;
 }
 .title {
   margin-top: 0;
@@ -131,7 +133,7 @@ pre code {
 
 <div id="sidebar"><input type="text" id="search" placeholder="Search..."><ul></ul></div>
 
-<div class="seperator1">
+<div class="seperator">
 <h2 id="links" class="title">Links</h2>
     
 <a href="https://www.youtube.com/watch?v=N8pHSP3ob7o&list=PL0eyrZgxdwhwwQQZA79OzYwl5ewA7HQih&index=27">Password Hash</a><br>
@@ -142,7 +144,7 @@ pre code {
 <a href="https://www.youtube.com/watch?v=ZAPzeoHhid0">Visual Studio Code as a Free PHP IDE Like PHPStorm</a><br>
 </div>
 
-<div class="seperator2">
+<div class="seperator">
 <h2 class="title">HOW TO SET UP PACKAGE.JSON & VITE.CONFIG.JS</h2>
 
 Use the terminal, and type this to create the package.json:
@@ -164,7 +166,7 @@ export default defineConfig({
 });</code></pre>
 </div>
 
-<div class="seperator1">
+<div class="seperator">
 
 <h2 class="title">Fixing npm's standard Windows security restriction</h2>
 
@@ -177,7 +179,7 @@ When prompted, type Y (or A for Yes to All) and press Enter.
 Restart your terminal (or VS Code) and try npm -v again
 </div>
 
-<div class="seperator2">
+<div class="seperator">
 <h2 class="title">Create Laravel new project:</h2>
 <pre><code class="language-bash">laravel new secondweb
 cd secondweb
@@ -217,16 +219,16 @@ php artisan migrate:rollback --path=database/migrations/0001_01_01_000001_create
 <a href="https://gemini.google.com/share/9deb88497563">Click here to view Google gemini conversation</a>
 </div>
 
-<div class="seperator1">
+<div class="seperator">
 <h2 class="title">VS Code Usefull Extensions</h2><div id="vscode-screenshot"></div>
 </div>
 
-<div class="seperator2">
+<div class="seperator">
 <h2 class="title">Securing PHP Apps: Handling Mass Assignment Vulnerabilities </h2><div id="vscode-screenshot"></div>
 <a href="https://gemini.google.com/share/6c5834eec290">Click here to view Google gemini conversation</a>
 </div>
 
-<div class="seperator1">
+<div class="seperator">
 <h2 class="title">Installing Docker on Windows</h2>
 <b>1. Check System Requirements</b>
 Before starting, ensure your PC meets these minimum specs:
@@ -273,7 +275,7 @@ If you see a message saying **"Hello from Docker!"**, you are officially ready t
 Would you like me to show you how to pull your first image (like Nginx or Python) and run it?
 </div>
 
-<div class="seperator2">
+<div class="seperator">
 <h2 class="title">Laravel Route</h2>
 <a href="https://www.youtube.com/watch?v=Rz6SMgKrSYE&list=PL0eyrZgxdwhy7Woo2VRRDMmTXXYT_iaYO">Dani Krossing: Laravel PHP Framework Tutorial for Beginners</a>
 <a href="https://www.youtube.com/watch?v=DgQEDXBcyZw&list=PLr3d3QYzkw2xTKNyWpm7XZ63j-HntTyvC&index=11">Program With Gio: Working with Route Parameters in Laravel</a>
@@ -281,24 +283,24 @@ Would you like me to show you how to pull your first image (like Nginx or Python
 <a href="https://www.youtube.com/watch?v=C63AxM2y3pc&list=PLr3d3QYzkw2xTKNyWpm7XZ63j-HntTyvC&index=14">Program With Gio: How Middleware Works in Laravel</a>
 </div>
 
-<div class="seperator1">
+<div class="seperator">
 <h2 class="title">Simple CSS Grid Templates</h2>
 <a href="https://www.quackit.com/html/templates/css_grid_templates.cfm" target="_blank" rel="noopener noreferrer">Simple CSS Grid Templates</a>
 <a href="https://www.quackit.com/html/templates/css_flexbox_templates.cfm" target="_blank" rel="noopener noreferrer">Simple CSS Flexbox Templates</a>
 </div>
 
-<div class="seperator2">
+<div class="seperator">
 <h2 class="title">Github - Public APIs: A Collection of Free APIs for Development</h2>
 <a href="https://github.com/public-apis/public-apis" target="_blank" rel="noopener noreferrer">Github - Public APIs: A Collection of Free APIs for Development</a>
 </div>
 
-<div class="seperator1">
-<h2 class="title">Github - Public APIs: A Collection of Free APIs for Development</h2>
+<div class="seperator">
+<h2 class="title">Lucide Icons: Open-source svg icon library</h2>
 <a href="https://lucide.dev/icons/" target="_blank" rel="noopener noreferrer">Lucide Icons: Open-source svg icon library</a>
 </div>
 
 
-<div class="seperator2">
+<div class="seperator">
   <h2 class="title">JSMastery React JS & Tailwind Training: Notes</h2>
   <a href="https://www.youtube.com/watch?v=6biMWgD6_JY&t=159s" target="_blank" rel="noopener noreferrer">TailWind Tutorial</a>
   <a href="https://www.youtube.com/watch?v=dCLhUialKPQ" target="_blank" rel="noopener noreferrer">React JS Tutorial for Beginners</a>
@@ -323,27 +325,27 @@ React 'use-debounce' hook package
 <pre><code class="language-bash">npm install react-use</code></pre>
 </div>
 
-<div class="seperator1">
+<div class="seperator">
 <h2 class="title">CSS: Gradient Hover Effect</h2>
 <a href="gradient-hover.html" target="_blank" rel="noopener noreferrer">Click here</a>
 </div>
 
-<div class="seperator2">
+<div class="seperator">
 <h2 class="title">CSS easing playground</h2>
 <a href="https://joshcollinsworth.com/demos/easing" target="_blank" rel="noopener noreferrer">Click here</a>
 </div>
 
-<div class="seperator1">
+<div class="seperator">
 <h2 class="title">Github Commands</h2>
 <a href="https://education.github.com/git-cheat-sheet-education.pdf" target="_blank" rel="noopener noreferrer">Click here</a>
 </div>
 
-<div class="seperator2">
+<div class="seperator">
 <h2 class="title">CSS slideInLeft slideInRight animations</h2>
 <a href="https://www.html-code-generator.com/css/animations/slide" target="_blank" rel="noopener noreferrer">Click here</a>
 </div>
 
-<div class="seperator1">
+<div class="seperator">
 <h2 class="title">CSS Grid lines bg / textured bg</h2>
 <pre><code class="language-bash">
 . bg-grid-lines{
@@ -358,24 +360,24 @@ React 'use-debounce' hook package
 </code></pre>
 </div>
 
-<div class="seperator2">
+<div class="seperator">
 <h2 class="title">CSS Loading animations</h2>
 <a href="https://www.html-code-generator.com/css/loading-animation" target="_blank" rel="noopener noreferrer">Click here</a>
 </div>
 
-<div class="seperator1">
+<div class="seperator">
 <h2 class="title">HTML/CSS code generator rainbow gradient color animated text</h2>
 <a href="https://www.html-code-generator.com/html/rainbow-text-generator#css-animated-rainbow-gradient" target="_blank" rel="noopener noreferrer">Click here</a>
 </div>
 
-<div class="seperator2">
+<div class="seperator">
 <h2 class="title">Open source (free) animation library for web</h2>
 <a href="https://motion.dev/" target="_blank" rel="noopener noreferrer">motion.dev animations library website</a>
 <a href="https://www.dimi.me/lab/looping-images">Looping with images</a>
 <a href="https://motion.dev/examples/react-scroll-velocity-linked-offset">Scroll velocity: 3D planes</a>
 </div>
   
-<div class="seperator1">
+<div class="seperator">
 <h2 class="title">TailWind CSS Free Resources UI Kits, HeroIcons, HeroPatterns, HeadlessUI, UI Blocks, Ecommerce, App UI</h2>
 <a href="https://heropatterns.com/" target="_blank" rel="noopener noreferrer">Hero Patterns</a>
 <a href="https://heroicons.com/micro" target="_blank" rel="noopener noreferrer">Hero Icons</a>
@@ -386,24 +388,24 @@ React 'use-debounce' hook package
 <a href="https://tailwindcss.com/plus/ui-blocks/application-ui/application-shells/stacked" target="_blank" rel="noopener noreferrer">Application UI Blocks</a>
 </div>
 
-<div class="seperator2">
+<div class="seperator">
 <h2 class="title">Unspalsh free photos</h2>
 <a href="https://unsplash.com/" target="_blank" rel="noopener noreferrer">Click here</a>
 </div>
 
-<div class="seperator1">
+<div class="seperator">
 <h2 class="title">Basics Steps to develop a theme in Wordpress</h2>
 <a href="BasicsFunctionsfordevelopathemeinWordpress.html" target="_blank" rel="noopener noreferrer">Click here</a>
 </div>
 
-<div class="seperator2">
+<div class="seperator">
 <h2 class="title">Wordpress Official Courses</h2>
 <a href="https://learn.wordpress.org/courses/" target="_blank" rel="noopener noreferrer">Wordpress Official Courses</a>
 <a href="https://developer.wordpress.org/block-editor/">Block Editor Handbook</a>
 <a href="https://github.com/wptrainingteam/beginner-developer/">Beginner Developer learning assets github</a>
 </div>
 
-<div class="seperator1">
+<div class="seperator">
 <h2 class="title">Wordpress Official Courses</h2>
 <a href="https://learn.wordpress.org/courses/" target="_blank" rel="noopener noreferrer">Wordpress Official Courses</a>
 <a href="https://developer.wordpress.org/block-editor/">Block Editor Handbook</a>
@@ -411,7 +413,7 @@ React 'use-debounce' hook package
 <a href="https://localwp.com/">Local: Wordpress Developement Tool, Local Server</a>
 </div>
 
-<div class="seperator2">
+<div class="seperator">
 <h2 class="title">Wordpress Security</h2>
 <a href="https://learn.wordpress.org/lesson/securely-developing-plugins-and-themes/">Tutorial</a>
 <a href="https://developer.wordpress.org/apis/security/">All Secrutiy Docs</a>
@@ -497,20 +499,20 @@ React 'use-debounce' hook package
 </code></pre>
 </div>
 
-<div class="seperator1">
+<div class="seperator">
 <h2 class="title">Wordpress Site Content Translation Plugins - Recommended</h2>
 <a href=https://wordpress.org/plugins/translatepress-multilingual/" target="_blank" rel="noopener noreferrer">TranslatePress – Translate Multilingual sites with AI Translation</a>
 <a href="https://wordpress.org/plugins/polylang/">Polylang</a>
 <a href="https://wordpress.org/plugins/weglot/">Translate WordPress with Weglot – Multilingual AI Translation</a>
 </div>
 
-<div class="seperator2">
+<div class="seperator">
 <h2 class="title">Wordpress Internationalization (i18n): Which one should I use? Tips</h2>
 <a href="Internationalization_i18n_WhichoneshouldIuse.html" target="_blank" rel="noopener noreferrer">Click here</a>
 <a href="https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/">Use add-textdomain.php Tool to auto add text domain (optional)</a>
 </div>
 
-<div class="seperator1">
+<div class="seperator">
 <h2 class="title">WordPress debugging options: debug.log, error_log()</h2>
 <a href="https://learn.wordpress.org/lesson/the-built-in-wordpress-debugging-options/" target="_blank" rel="noopener noreferrer">Click here</a>
 <a href="https://wordpress.org/plugins/debug-bar/">Debug Bar Plugin</a>
@@ -527,17 +529,17 @@ React 'use-debounce' hook package
 </code></pre>
 </div>
 
-<div class="seperator2">
+<div class="seperator">
 <h2 class="title">Installing Node.js using chocolatey & nvm in windows using Powershell.</h2>
 <a href="https://learn.wordpress.org/lesson/setting-up-your-block-development-environment/" target="_blank" rel="noopener noreferrer">Click here</a>
 </div>
 
-<div class="seperator1">
+<div class="seperator">
 <h2 class="title">Ajax Tutorials</h2>
 <a href="https://www.w3schools.com/xml/ajax_intro.asp" target="_blank" rel="noopener noreferrer">Click here</a>
 </div>
 
-<div class="seperator2">
+<div class="seperator">
 <h2 class="title">Adobe XD tutorials: UI UX - User Persona Imaginary Character</h2>
   UX/UI
 1. Qualitative research (quantitative data)
@@ -629,6 +631,51 @@ Color Hunt: <a href="https://colorhunt.co/">link</a>
   }
   createSidebar();
 
+  // Function to highlight a section
+  function highlightSection(elementId) {
+    // Remove previous highlight
+    document.querySelectorAll('.seperator.highlighted').forEach(el => {
+      el.classList.remove('highlighted');
+    });
+    
+    // Add highlight to target element
+    if (elementId) {
+      const element = document.getElementById(elementId);
+      if (element) {
+        // Find the parent separator div
+        const separator = element.closest('.seperator');
+        if (separator) {
+          separator.classList.add('highlighted');
+          // Remove highlight after 5 seconds
+          setTimeout(() => {
+            separator.classList.remove('highlighted');
+          }, 5000);
+        }
+      }
+    }
+  }
+
+  // Add click handler to sidebar links
+  const sidebarLinks = document.querySelectorAll('#sidebar a');
+  sidebarLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      const targetId = href.substring(1);
+      highlightSection(targetId);
+    });
+  });
+
+  // Apply alternating separator styles
+  function applySeparatorVariants() {
+    const separators = document.querySelectorAll('.seperator');
+    let variant = 1;
+    separators.forEach(sep => {
+      sep.setAttribute('data-variant', variant);
+      variant = variant === 1 ? 2 : 1;
+    });
+  }
+  applySeparatorVariants();
+
   const searchInput = document.getElementById('search');
   searchInput.addEventListener('input', function() {
     const query = this.value.toLowerCase();
@@ -659,6 +706,7 @@ Color Hunt: <a href="https://colorhunt.co/">link</a>
       const targetElement = document.getElementById(targetId);
       if (targetElement) {
         targetElement.scrollIntoView({ behavior: 'smooth' });
+        highlightSection(targetId);
       }
     }
   });
